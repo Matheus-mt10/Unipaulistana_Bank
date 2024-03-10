@@ -16,16 +16,24 @@ class BaseScaffold extends StatelessWidget {
     return Scaffold(
       appBar: showAppBar
           ? AppBar(
+              backgroundColor: Colors.lightBlue,
               title: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text("Olá, Matheus"), Text('CPF: 123.***.***-12')],
+                children: [Text("Olá, Matheus"), 
+                Row(
+                  children: [
+                    Text('CPF: 123.***.***-12'),
+                  ],
+                )],
               ),
             )
           : null,
       drawer: const DrawerHome(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-        child: body,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: body,
+        ),
       ),
     );
   }

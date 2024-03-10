@@ -17,7 +17,9 @@ class _SquareButtonState extends State<SquareButton> {
       margin: const EdgeInsets.all(5.0),
       color: Colors.amber,
       child: const Column(
-        children: [Icon(FontAwesomeIcons.pix), Text("Pix")],
+        children: [
+          Icon(FontAwesomeIcons.pix),
+          Text("Pix")],
       ),
     );
   }
