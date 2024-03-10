@@ -21,8 +21,14 @@ class _DrawerHomeState extends State<DrawerHome> {
           children: [
             Wrap(
               children: [
-                Icon(FontAwesomeIcons.solidUser),
-                Text("Matheus Santana")
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Icon(FontAwesomeIcons.solidUser),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Text("Matheus Santana"),
+                )
               ],
             ),
           ],

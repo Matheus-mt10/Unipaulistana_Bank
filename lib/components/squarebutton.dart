@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SquareButton extends StatefulWidget {
-  const SquareButton({super.key});
+  final IconData icon;
+  final String text;
+  const SquareButton({super.key, required this.icon, required this.text });
 
   @override
   State<SquareButton> createState() => _SquareButtonState();
@@ -16,10 +17,18 @@ class _SquareButtonState extends State<SquareButton> {
       height: 100,
       margin: const EdgeInsets.all(5.0),
       color: Colors.amber,
-      child: const Column(
+      child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(FontAwesomeIcons.pix),
-          Text("Pix")],
+          Icon(widget.icon),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(widget.text),
+            ],
+          )
+        ],
       ),
     );
   }

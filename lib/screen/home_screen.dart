@@ -16,35 +16,41 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const Text(
-              'Bem vindo(a)',
-              style: TextStyle(fontSize: 24),
-            ),
-            Row(
-              children: [
-                Text(_showBalance ? 'Saldo: R\$ 1.000,00' : 'Saldo: --',
-                    style: const TextStyle(fontSize: 24)),
-                IconButton(
-                    onPressed: () {
-                      _showBalance = !_showBalance;
-                      setState(() {});
-                    },
-                    icon: Icon(_showBalance
-                        ? FontAwesomeIcons.eye
-                        : FontAwesomeIcons.eyeSlash))
-              ],
-            ),
-            const Wrap(
-              children: [
-                SquareButton(),
-                SquareButton(),
-                SquareButton(),
-              ],
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Bem vindo(a)',
+                style: TextStyle(fontSize: 24),
+              ),
+              Row(
+                children: [
+                  Text(_showBalance ? 'Saldo: R\$ 1.000,00' : 'Saldo: --',
+                      style: const TextStyle(fontSize: 24)),
+                  IconButton(
+                      onPressed: () {
+                        _showBalance = !_showBalance;
+                        setState(() {});
+                      },
+                      icon: Icon(_showBalance
+                          ? FontAwesomeIcons.eye
+                          : FontAwesomeIcons.eyeSlash))
+                ],
+              ),
+              const Wrap(
+                children: [
+                  SquareButton(
+                    icon: FontAwesomeIcons.pix,
+                    text: 'Pix',
+                  ),
+                  SquareButton(
+                      icon: FontAwesomeIcons.cashRegister, text: 'Extrato')
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
