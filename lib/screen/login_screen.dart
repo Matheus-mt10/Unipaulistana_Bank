@@ -14,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+      showAppBar: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

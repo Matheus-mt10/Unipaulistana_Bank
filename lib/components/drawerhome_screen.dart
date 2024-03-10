@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class DrawerHome extends StatefulWidget {
   const DrawerHome({super.key});
@@ -13,8 +14,8 @@ class _DrawerHomeState extends State<DrawerHome> {
   Widget build(BuildContext context) {
     return Drawer(
         child: ListView(
-      children: const [
-        DrawerHeader(
+      children: [
+        const DrawerHeader(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,20 +27,24 @@ class _DrawerHomeState extends State<DrawerHome> {
             ),
           ],
         )),
-        ListTile(
-          title: Text('Serviços'),
-        ),
-        ListTile(
+        const ListTile(
+          leading: Icon(FontAwesomeIcons.idBadge),
           title: Text('Minha conta'),
         ),
-        ListTile(
+        const ListTile(
+          leading: Icon(FontAwesomeIcons.creditCard),
           title: Text('Cartões'),
         ),
-        ListTile(
+        const ListTile(
+          leading: Icon(FontAwesomeIcons.solidCommentDots),
           title: Text('Auto atendimento'),
         ),
         ListTile(
-          title: Text('Sair'),
+          onTap: () {
+            context.go('/');
+          },
+          leading: const Icon(FontAwesomeIcons.rightFromBracket),
+          title: const Text('Sair'),
         ),
       ],
     ));
