@@ -46,7 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     text: 'Pix',
                   ),
                   SquareButton(
-                      icon: FontAwesomeIcons.cashRegister, text: 'Extrato')
+                      icon: FontAwesomeIcons.cashRegister, text: 'Extrato'),
+                  SquareButton(
+                      icon: FontAwesomeIcons.creditCard, text: 'Cartões'),
+                  SquareButton(
+                      icon: FontAwesomeIcons.moneyBillTransfer,
+                      text: 'Tranferências')
                 ],
               ),
             ],
