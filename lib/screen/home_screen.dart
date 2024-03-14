@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:unipaulistana_bank/components/base_scaffold.dart';
 import 'package:unipaulistana_bank/components/squarebutton.dart';
+import 'package:unipaulistana_bank/components/title_text.dart';
+import 'package:unipaulistana_bank/http/dtos/statement_dto.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +14,27 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _showBalance = true;
+
+  final List<StatementDto> _statementList = [
+    StatementDto(
+        toFromName: "Matheus",
+        value: 100.00,
+        date: DateTime(1, 1, 2024),
+        status: 'concluida',
+        type: 'pix'),
+    StatementDto(
+        toFromName: "Fatima",
+        value: 150.00,
+        date: DateTime(1, 1, 2024),
+        status: 'concluida',
+        type: 'pix'),
+    StatementDto(
+        toFromName: "Igor",
+        value: 200.00,
+        date: DateTime(1, 1, 2024),
+        status: 'concluida',
+        type: 'pix')
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +77,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       text: 'Tranferências')
                 ],
               ),
+              const TitleText(text: 'TRansações', fontSize: 30),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: _statementList.length,
+                itemBuilder: (context, index) {
+                  var statement = _statementList[index];
+                  return Card(
+                    child: ListTile(
+                        title: Column(
+                      children: [
+                        Text(statement.type),
+                        Text(statement.toFromName)
+                      ],
+                    )),
+                  );
+                },
+              )
             ],
           ),
         ),
