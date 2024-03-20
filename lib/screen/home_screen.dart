@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         value: 100.00,
         date: DateTime(1, 1, 2024),
         status: 'concluida',
-        type: 'pix'),
+        type: 'Trasferências'),
     StatementDto(
         toFromName: "Fatima",
         value: 150.00,
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       text: 'Tranferências')
                 ],
               ),
-              const TitleText(text: 'TRansações', fontSize: 30),
+              const TitleText(text: 'Últimas transações', fontSize: 30),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: _statementList.length,
