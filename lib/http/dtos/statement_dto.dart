@@ -1,7 +1,7 @@
 class StatementDto {
   final String toFromName;
   final double value;
-  final DateTime date;
+  final String date;
   final String status;
   final String type;
 

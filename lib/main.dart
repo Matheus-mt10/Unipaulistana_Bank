@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 import 'package:unipaulistana_bank/screen/forgotpassword_screen.dart';
 import 'package:unipaulistana_bank/screen/home_screen.dart';
 import 'screen/login_screen.dart';
@@ -10,15 +11,18 @@ final _router = GoRouter(routes: [
     path: '/',
     builder: (context, state) => const LoginScreen(),
   ),
-  GoRoute(path: '/homeScreen', 
-  builder: (context, state) => const HomeScreen(),
+  GoRoute(
+    path: '/homeScreen',
+    builder: (context, state) => const HomeScreen(),
   ),
-  GoRoute(path: '/forgotPassword',
-  builder: (context, state) => const ForgotPassword(),)
-  
+  GoRoute(
+    path: '/forgotPassword',
+    builder: (context, state) => const ForgotPassword(),
+  )
 ], initialLocation: '/');
 
 void main() {
+  Intl.defaultLocale = 'pt_BR';
   runApp(const MyApp());
 }
 
@@ -28,6 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: _router,
       title: 'Flutter Demo',
       theme: FlexThemeData.light(
