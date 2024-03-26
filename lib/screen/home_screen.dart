@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:unipaulistana_bank/components/base_scaffold.dart';
 import 'package:unipaulistana_bank/components/squarebutton.dart';
+import 'package:unipaulistana_bank/components/statement_tile.dart';
 import 'package:unipaulistana_bank/components/title_text.dart';
 import 'package:unipaulistana_bank/http/dtos/statement_dto.dart';
 
@@ -38,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   var brlFormat = NumberFormat.currency();
-  // final f = DateFormat('dd-MM-yyyy HH:mm');
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   var statement = _statementList[index];
 
-                  
+                  return StatementTile(statementItem: statement);
                 },
               )
             ],
