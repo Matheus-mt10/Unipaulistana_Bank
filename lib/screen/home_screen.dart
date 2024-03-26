@@ -91,30 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   var statement = _statementList[index];
 
-                  return Card(
-                    child: ListTile(
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(statement.type),
-                          Text(statement.toFromName)
-                        ],
-                      ),
-                      trailing: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                              NumberFormat.currency(symbol: 'R\$')
-                                  .format(statement.value),
-                              style: const TextStyle(fontSize: 16)),
-                          Text(
-                            statement.date,
-                            style: const TextStyle(fontSize: 12),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
+                  
                 },
               )
             ],
