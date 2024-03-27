@@ -16,17 +16,17 @@ class _DrawerHomeState extends State<DrawerHome> {
         child: ListView(
       shrinkWrap: true,
       children: [
-        const DrawerHeader(
+         DrawerHeader(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Wrap(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.0),
-                  child: Icon(FontAwesomeIcons.solidUser),
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Image.asset('assets/images/supershock.jpg'),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Text("Matheus Santana"),
                 )

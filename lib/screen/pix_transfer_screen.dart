@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unipaulistana_bank/components/base_scaffold.dart';
+import 'package:unipaulistana_bank/components/title_text.dart';
 
 class PixTransferScreen extends StatefulWidget {
   const PixTransferScreen({super.key});
@@ -13,7 +14,7 @@ class _PixTransferScreenState extends State<PixTransferScreen> {
   Widget build(BuildContext context) {
     return const BaseScaffold(
       body: Column(
-        children: [Text('data')],
+        children: [TitleText(text: "Tranferência Pix", fontSize: 24)],
       ),
     );
   }
