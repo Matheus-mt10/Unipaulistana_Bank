@@ -5,7 +5,7 @@ import 'package:unipaulistana_bank/components/base_scaffold.dart';
 import 'package:unipaulistana_bank/components/squarebutton.dart';
 import 'package:unipaulistana_bank/components/statement_tile.dart';
 import 'package:unipaulistana_bank/components/title_text.dart';
-import 'package:unipaulistana_bank/http/dtos/statement_dto.dart';
+import 'package:unipaulistana_bank/http/mocks/stament_list_mock.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,27 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _showBalance = true;
-
-  final List<StatementDto> _statementList = [
-    StatementDto(
-        toFromName: "Matheus",
-        value: 100.00,
-        date: "01/02/2024",
-        status: 'concluida',
-        type: 'Trasferências'),
-    StatementDto(
-        toFromName: "Fatima",
-        value: 150.00,
-        date: "02/02/2024",
-        status: 'concluida',
-        type: 'pix'),
-    StatementDto(
-        toFromName: "Igor",
-        value: 200.00,
-        date: "03/02/2024",
-        status: 'concluida',
-        type: 'pix')
-  ];
 
   var brlFormat = NumberFormat.currency();
 
@@ -76,7 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     text: 'Pix',
                   ),
                   SquareButton(
-                      icon: FontAwesomeIcons.cashRegister, text: 'Extrato'),
+                      icon: FontAwesomeIcons.moneyBillTransfer,
+                      text: 'Extrato'),
                   SquareButton(
                       icon: FontAwesomeIcons.creditCard, text: 'Cartões'),
                   SquareButton(
@@ -87,9 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
               const TitleText(text: 'Últimas transações', fontSize: 30),
               ListView.builder(
                 shrinkWrap: true,
-                itemCount: _statementList.length,
+                itemCount: StatementMock.statementList.length > 3
+                    ? 3
+                    : StatementMock.statementList.length,
                 itemBuilder: (context, index) {
-                  var statement = _statementList[index];
+                  var statement = StatementMock.statementList[index];
 
                   return StatementTile(statementItem: statement);
                 },

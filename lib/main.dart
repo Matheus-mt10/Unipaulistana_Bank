@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:unipaulistana_bank/screen/forgotpassword_screen.dart';
 import 'package:unipaulistana_bank/screen/home_screen.dart';
+import 'package:unipaulistana_bank/screen/pix_transfer_screen.dart';
+import 'package:unipaulistana_bank/screen/statement_screen.dart';
 import 'screen/login_screen.dart';
 
 final _router = GoRouter(routes: [
@@ -18,6 +20,14 @@ final _router = GoRouter(routes: [
   GoRoute(
     path: '/forgotPassword',
     builder: (context, state) => const ForgotPassword(),
+  ),
+  GoRoute(
+    path: '/extrato',
+    builder: (context, state) => const StatementScreen(),
+  ),
+  GoRoute(
+    path: '/pixtransfer',
+    builder: (context, state) => const PixTransferScreen(),
   )
 ], initialLocation: '/');
 

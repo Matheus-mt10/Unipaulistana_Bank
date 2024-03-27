@@ -14,6 +14,7 @@ class _DrawerHomeState extends State<DrawerHome> {
   Widget build(BuildContext context) {
     return Drawer(
         child: ListView(
+      shrinkWrap: true,
       children: [
         const DrawerHeader(
             child: Column(
@@ -33,9 +34,26 @@ class _DrawerHomeState extends State<DrawerHome> {
             ),
           ],
         )),
-        const ListTile(
-          leading: Icon(FontAwesomeIcons.idBadge),
-          title: Text('Minha conta'),
+        ListTile(
+          leading: const Icon(FontAwesomeIcons.house),
+          title: const Text('Início'),
+          onTap: () {
+            context.go('/homeScreen');
+          },
+        ),
+        ListTile(
+          leading: const Icon(FontAwesomeIcons.pix),
+          title: const Text('Pix'),
+          onTap: () {
+            context.go('/pixtransfer');
+          },
+        ),
+        ListTile(
+          onTap: () {
+            context.go('/extrato');
+          },
+          leading: const Icon(FontAwesomeIcons.moneyBillTransfer),
+          title: const Text('Extrato'),
         ),
         const ListTile(
           leading: Icon(FontAwesomeIcons.creditCard),
