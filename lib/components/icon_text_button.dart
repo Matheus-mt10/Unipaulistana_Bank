@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 
 class IconTextButton extends StatelessWidget {
-  const IconTextButton({super.key});
+  final IconData icon;
+  final Widget primaryText;
+  const IconTextButton(
+      {super.key, required this.icon, required this.primaryText});
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         Container(
-          color: Color(Colors.red),
-        )
-      
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Theme.of(context).primaryColor,
+          ),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(
+              Icons.abc,
+              size: 50,
+            ),
+          ),
+        ),
+        primaryText,
       ],
     );
   }
