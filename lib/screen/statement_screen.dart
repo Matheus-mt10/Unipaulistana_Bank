@@ -1,20 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:unipaulistana_bank/components/base_scaffold.dart';
 import 'package:unipaulistana_bank/components/statement_tile.dart';
 import 'package:unipaulistana_bank/components/title_text.dart';
 import 'package:unipaulistana_bank/http/mocks/stament_list_mock.dart';
+import 'package:unipaulistana_bank/screen/bloc/statement/statement_bloc.dart';
 
-class StatementScreen extends StatefulWidget {
+
+class StatementScreen extends StatelessWidget {
   const StatementScreen({super.key});
 
   @override
-  State<StatementScreen> createState() => _StatementScreenState();
+  Widget build(BuildContext context) {
+    return  BlocProvider(
+      create: (BuildContext context) => StatementBloc(),
+      child: const StatementView(),
+    ); ;
+  }
 }
 
-class _StatementScreenState extends State<StatementScreen> {
+class StatementView extends StatefulWidget {
+  const StatementView({super.key});
+
+  @override
+  State<StatementView> createState() => _StatementViewState();
+}
+
+class _StatementViewState extends State<StatementView> {
   @override
   Widget build(BuildContext context) {
-    return BaseScaffold(
+    return 
+
+    BaseScaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
