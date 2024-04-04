@@ -13,9 +13,9 @@ class StatementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  BlocProvider(
-      create: (BuildContext context) => StatementBloc(),
+      create: (BuildContext context) => (),
       child: const StatementView(),
-    ); ;
+    ); 
   }
 }
 
